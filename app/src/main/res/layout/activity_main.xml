@@ -24,14 +24,16 @@
             android:layout_marginBottom="80dp"/>
     </LinearLayout>
     <Button
+        android:id="@+id/button_start"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Start Here"
+        android:text="Start Here!"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="30dp"
-        android:fontFamily="@font/lobsteritalic"
+        android:textSize="22sp"
+        android:fontFamily="@font/lobsterregular"
         />
 
 </RelativeLayout>
