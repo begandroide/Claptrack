@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
             Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, categoryActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
 
