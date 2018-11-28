@@ -3,13 +3,14 @@ package cl.bgautier.claptrack;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         ImageView im_draw = findViewById(R.id.rocket_image);
         AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) getDrawable(R.drawable.animationdrawable);
         im_draw.setImageDrawable(drawable);
-        drawable.start();
+        //drawable.start();
 
         ObjectAnimator.ofFloat(im_draw, "translationX", -800f)
                 .setDuration(3000)
@@ -46,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
         if (motionEvent1.getX() - motionEvent2.getX() > 50) {
             Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, categoryActivity.class);
+            Intent intent = new Intent(this,categoryActivity.class);
             startActivity(intent);
             finish();
             return true;
