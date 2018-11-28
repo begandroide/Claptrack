@@ -22,12 +22,14 @@
         </activity>
         <activity android:name=".categoryActivity">
         </activity>
+        <activity android:name=".DescriptionActivity"/>
         <activity android:name=".platformActivity" android:parentActivityName=".categoryActivity">
             <intent-filter >
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
         <activity android:name=".CardStackActivity" />
+
     </application>
 
 </manifest>
