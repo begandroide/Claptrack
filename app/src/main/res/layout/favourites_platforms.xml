@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#303030">
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:columnCount="2"
+        android:rowCount="3">
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/ps4" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Playstation4"
+                android:textColor="@color/colorAccent"
+                android:textSize="23sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/ps3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Playstation3"
+                android:textColor="@color/colorAccent"
+                android:textSize="23sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="5dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/nswitch" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Nintendo Switch"
+                android:textColor="@color/colorAccent"
+                android:textSize="23dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="155dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/threds" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Nintendo 3DS"
+                android:textColor="@color/colorAccent"
+                android:textSize="23dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/one" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="Xbox One"
+                android:textColor="@color/colorAccent"
+                android:textSize="25dp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="95dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
+                android:src="@drawable/pc" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:text="PC"
+                android:textColor="@color/colorAccent"
+                android:textSize="23dp" />
+        </FrameLayout>
+    </GridLayout>
+</LinearLayout>
