@@ -1,25 +1,26 @@
 package cl.bgautier.claptrack;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.util.DiffUtil;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DiffUtil;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
-import android.view.View;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
+import android.widget.TextView;
 
+import com.mikepenz.materialdrawer.Drawer;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
 import com.yuyakaido.android.cardstackview.CardStackListener;
 import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.Direction;
-import com.yuyakaido.android.cardstackview.RewindAnimationSetting;
 import com.yuyakaido.android.cardstackview.StackFrom;
-import com.yuyakaido.android.cardstackview.SwipeAnimationSetting;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 import cl.bgautier.claptrack.Utilities.CardStackAdapter;
+import cl.bgautier.claptrack.Utilities.DrawerUtil;
 import cl.bgautier.claptrack.Utilities.Spot;
 import cl.bgautier.claptrack.Utilities.SpotDiffCallback;
 
@@ -30,18 +31,18 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
     private CardStackView cardStackView;
+    private Drawer drawer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_stack);
+        setupNavigation();
         setupCardStackView();
-        setupButton();
     }
 
     @Override
     public void onBackPressed() {
-
     }
 
     @Override
@@ -67,53 +68,25 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
         Log.d("CardStackView", "onCardCanceled:" + manager.getTopPosition());
     }
 
+    private void setupNavigation() {
+        // Toolbar
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
+
+        setSupportActionBar(toolbar);
+        mTitle.setTextSize(24);
+        mTitle.setText(toolbar.getTitle());
+        drawer = DrawerUtil.getDrawer(this,toolbar);
+
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+    }
+
     private void setupCardStackView() {
         initialize();
     }
 
-    private void setupButton() {
-        View skip = findViewById(R.id.skip_button);
-        skip.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
-                        .setDirection(Direction.Left)
-                        .setDuration(200)
-                        .setInterpolator(new AccelerateInterpolator())
-                        .build();
-                manager.setSwipeAnimationSetting(setting);
-                cardStackView.swipe();
-            }
-        });
 
-        View rewind = findViewById(R.id.rewind_button);
-        rewind.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                RewindAnimationSetting setting = new RewindAnimationSetting.Builder()
-                        .setDirection(Direction.Bottom)
-                        .setDuration(200)
-                        .setInterpolator(new DecelerateInterpolator())
-                        .build();
-                manager.setRewindAnimationSetting(setting);
-                cardStackView.rewind();
-            }
-        });
-
-        View like = findViewById(R.id.like_button);
-        like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SwipeAnimationSetting setting = new SwipeAnimationSetting.Builder()
-                        .setDirection(Direction.Right)
-                        .setDuration(200)
-                        .setInterpolator(new AccelerateInterpolator())
-                        .build();
-                manager.setSwipeAnimationSetting(setting);
-                cardStackView.swipe();
-            }
-        });
-    }
 
     private void initialize() {
         manager = new CardStackLayoutManager(getApplicationContext(), this);
@@ -144,15 +117,13 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
         result.dispatchUpdatesTo(adapter);
     }
 
-
-
     private List<Spot> createSpots() {
         List<Spot> spots = new ArrayList<>();
-        spots.add(new Spot("Little Raiders: Robin's Revenge", "", "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
-        spots.add(new Spot("Galactic Warriors", "", "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/j6etkqnsr5xolxr06ctj.jpg"));
-        spots.add(new Spot("Cosmic Bugs", "", "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/obrgi1zlum5prc52vcjs.jpg"));
-        spots.add(new Spot("Dune: The Battle for Arrakis", "", "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/klrrql6nidmxmmyef7zu.jpg"));
-        spots.add(new Spot("Clubhouse Games Express: Family Favorites", "", "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/jfxfycbvrr9bkd1jsv2f.jpg"));
+        spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
+        spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/j6etkqnsr5xolxr06ctj.jpg"));
+        spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/obrgi1zlum5prc52vcjs.jpg"));
+        spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/klrrql6nidmxmmyef7zu.jpg"));
+        spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/jfxfycbvrr9bkd1jsv2f.jpg"));
 
         return spots;
     }

@@ -1,6 +1,6 @@
 package cl.bgautier.claptrack.Utilities;
 
-import android.support.v7.util.DiffUtil;
+import androidx.recyclerview.widget.DiffUtil;
 
 import java.util.List;
 
@@ -33,9 +33,7 @@ public class SpotDiffCallback extends DiffUtil.Callback {
     public boolean areContentsTheSame(int oldPosition, int newPosition) {
         Spot oldSpot = oldList.get(oldPosition);
         Spot newSpot = newList.get(newPosition);
-        return oldSpot.name.equals(newSpot.name)
-                && oldSpot.city.equals(newSpot.city)
-                && oldSpot.url.equals(newSpot.url);
+        return oldSpot.url.equals(newSpot.url);
     }
 
 }
