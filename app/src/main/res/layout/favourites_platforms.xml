@@ -34,7 +34,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Playstation4"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23sp" />
         </FrameLayout>
 
@@ -57,7 +57,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Playstation3"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23sp" />
         </FrameLayout>
 
@@ -80,7 +80,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Nintendo Switch"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23dp" />
         </FrameLayout>
 
@@ -103,7 +103,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Nintendo 3DS"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23dp" />
         </FrameLayout>
 
@@ -125,7 +125,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Xbox One"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25dp" />
         </FrameLayout>
 
@@ -148,7 +148,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="PC"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23dp" />
         </FrameLayout>
     </GridLayout>

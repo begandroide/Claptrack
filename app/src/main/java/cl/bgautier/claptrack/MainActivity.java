@@ -3,13 +3,15 @@ package cl.bgautier.claptrack;
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+
 
 
 public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener
@@ -25,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         ImageView im_draw = findViewById(R.id.rocket_image);
         AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) getDrawable(R.drawable.animationdrawable);
         im_draw.setImageDrawable(drawable);
-        drawable.start();
+        //drawable.start();
 
         ObjectAnimator.ofFloat(im_draw, "translationX", -800f)
                 .setDuration(3000)

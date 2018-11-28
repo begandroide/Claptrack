@@ -36,7 +36,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Shooter"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25sp" />
         </FrameLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Adventure"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25sp" />
         </FrameLayout>
 
@@ -82,7 +82,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="RPG"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25dp" />
         </FrameLayout>
 
@@ -112,7 +112,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Plataformer"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="23dp" />
         </FrameLayout>
 
@@ -140,7 +140,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Horror"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25dp" />
         </FrameLayout>
 
@@ -163,7 +163,7 @@
                 android:layout_gravity="bottom"
                 android:gravity="center"
                 android:text="Sports"
-                android:textColor="@color/colorAccent"
+                android:textColor="@color/White"
                 android:textSize="25dp" />
         </FrameLayout>
     </GridLayout>
