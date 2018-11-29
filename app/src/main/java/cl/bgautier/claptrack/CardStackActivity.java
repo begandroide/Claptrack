@@ -1,11 +1,18 @@
 package cl.bgautier.claptrack;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
@@ -31,6 +38,7 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
     private CardStackView cardStackView;
+    private ShareActionProvider mShareActionProvider;
     private Drawer drawer;
 
     @Override
@@ -80,6 +88,34 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.actionbar, menu);
+
+        return true;
+    }
+
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.menu_item_share:
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, "Here is the link to the full review: ");
+                intent.setType("text/plain");
+                this.startActivity(Intent.createChooser(intent, "Send To"));
+                return true;
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
     private void setupCardStackView() {
