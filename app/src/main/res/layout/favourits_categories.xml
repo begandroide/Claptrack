@@ -46,12 +46,26 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/aventure" />
+                >
+
+                <Button
+                    android:id="@+id/btn_cate_adv"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_adv"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/aventure" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -69,12 +83,26 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/rpg" />
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btn_cate_rpg"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_cate_rpg"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/rpg" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -92,19 +120,27 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/figure_background_select"
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="95dp"
                 android:layout_gravity="center_horizontal"
+                android:background="@drawable/figure_background_select"
                 >
+
+                <Button
+                    android:id="@+id/btn_cate_platformer"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
                 <ImageView
+                    android:id="@+id/im_cate_platformer"
                     android:layout_width="90dp"
                     android:layout_height="85dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/plataformer" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -121,18 +157,26 @@
             android:layout_height="130dp"
             android:layout_marginTop="20dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="95dp"
                 android:layout_gravity="center_horizontal"
                 android:background="@drawable/figure_background_select">
+
+                <Button
+                    android:id="@+id/btn_cate_horror"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
                 <ImageView
+                    android:id="@+id/im_cate_horror"
                     android:layout_width="90dp"
                     android:layout_height="85dp"
                     android:layout_gravity="center"
                     android:layout_marginLeft="5dp"
                     android:src="@drawable/horror" />
-            </LinearLayout>
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -150,12 +194,26 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
                 android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/sports" />
+                android:background="@drawable/figure_background_select">
+
+                <Button
+                    android:id="@+id/btn_cate_sports"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+                <ImageView
+                    android:id="@+id/im_cate_sports"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/sports" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
