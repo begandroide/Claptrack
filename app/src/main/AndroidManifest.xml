@@ -24,7 +24,8 @@
         </activity>
         <activity android:name=".categoryActivity">
         </activity>
-        <activity android:name=".DescriptionActivity"/>
+        <activity android:name=".DescriptionActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".platformActivity" android:parentActivityName=".categoryActivity">
         </activity>
         <activity android:name=".CardStackActivity"

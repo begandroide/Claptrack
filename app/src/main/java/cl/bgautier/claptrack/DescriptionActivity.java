@@ -5,6 +5,8 @@ import java.util.ArrayList;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.Utilities.DrawerUtil;
 
 public class DescriptionActivity extends AppCompatActivity {
 
@@ -18,8 +20,9 @@ public class DescriptionActivity extends AppCompatActivity {
         setContentView(R.layout.description);
 
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.layout.action_bar);
+        //getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         TextView titulo= findViewById(R.id.Titulo);
         titulo.setText("Red Dead Redemption 2");

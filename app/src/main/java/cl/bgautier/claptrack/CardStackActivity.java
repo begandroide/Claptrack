@@ -10,9 +10,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.mikepenz.materialdrawer.Drawer;
 import com.yuyakaido.android.cardstackview.CardStackLayoutManager;
@@ -38,7 +36,6 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
     private CardStackLayoutManager manager;
     private CardStackAdapter adapter;
     private CardStackView cardStackView;
-    private ShareActionProvider mShareActionProvider;
     private Drawer drawer;
 
     @Override
@@ -55,12 +52,17 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
 
     @Override
     public void onCardDragging(Direction direction, float ratio) {
-        Log.d("CardStackView", "onCardDragging: d = " + direction.name() + ", r = " + ratio);
+        Log.d(TAG, "onCardDragging: d = " + direction.name() + ", r = " + ratio);
+        if(direction.name().equals("Top")){
+            Intent intent = new Intent(this, DescriptionActivity.class);
+            //myIntent.putExtra("key", value); //Optional parameters
+            this.startActivity(intent);
+        }
     }
 
     @Override
     public void onCardSwiped(Direction direction) {
-        Log.d("CardStackView", "onCardSwiped: p = " + manager.getTopPosition() + ", d = " + direction);
+        Log.d(TAG, "onCardSwiped: p = " + manager.getTopPosition() + ", d = " + direction);
         if (manager.getTopPosition() == adapter.getItemCount() - 5) {
             paginate();
         }
@@ -68,12 +70,12 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
 
     @Override
     public void onCardRewound() {
-        Log.d("CardStackView", "onCardRewound: " + manager.getTopPosition());
+        Log.d(TAG, "onCardRewound: " + manager.getTopPosition());
     }
 
     @Override
     public void onCardCanceled() {
-        Log.d("CardStackView", "onCardCanceled:" + manager.getTopPosition());
+        Log.d(TAG, "onCardCanceled:" + manager.getTopPosition());
     }
 
     private void setupNavigation() {
