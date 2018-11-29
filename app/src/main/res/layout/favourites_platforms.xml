@@ -22,12 +22,26 @@
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="5dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/ps4" />
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btn_play4"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_play4"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/ps4" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -45,12 +59,26 @@
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/ps3" />
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/btn_play3"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_play3"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/ps3" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -68,12 +96,25 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/nswitch" />
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:id="@+id/btn_nswitch"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_nswitch"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/nswitch" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -91,12 +132,25 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/threds" />
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:id="@+id/btn_threds"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_threds"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/threds" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -113,12 +167,25 @@
             android:layout_height="120dp"
             android:layout_marginTop="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/one" />
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:id="@+id/btn_one"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_one"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/one" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -136,12 +203,25 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp">
 
-            <ImageView
+            <RelativeLayout
                 android:layout_width="100dp"
                 android:layout_height="95dp"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/figure_background_select"
-                android:src="@drawable/pc" />
+                android:layout_gravity="center_horizontal">
+                <Button
+                    android:id="@+id/btn_pc"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_foregraund_select"
+                    android:layout_width="100dp"
+                    android:layout_height="110dp" />
+
+                <ImageView
+                    android:id="@+id/im_pc"
+                    android:layout_width="100dp"
+                    android:layout_height="95dp"
+                    android:layout_gravity="center_horizontal"
+                    android:background="@drawable/figure_background_select"
+                    android:src="@drawable/pc" />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -159,7 +239,7 @@
         android:layout_height="30dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Select me"
+        android:text="Finish"
         android:fontFamily="@font/lobsterregular"
         android:textAlignment="center"
         android:textSize="25dp"
