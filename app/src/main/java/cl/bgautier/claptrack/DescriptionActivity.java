@@ -47,8 +47,8 @@ public class DescriptionActivity extends AppCompatActivity {
         description.setText("Developed by the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America’s unforgiving heartland. The game's vast and atmospheric world will also provide the foundation for a brand new online multiplayer experience.");
 
 
-        TextView aa= findViewById(R.id.title_menu);
-        aa.setText("Claptrack");
+        //TextView aa= findViewById(R.id.title_menu);
+        //aa.setText("Claptrack");
 
 
 
