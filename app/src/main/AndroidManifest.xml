@@ -22,11 +22,10 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".categoryActivity">
+        <activity android:name=".categoryActivity" android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".DescriptionActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".platformActivity" android:parentActivityName=".categoryActivity">
+        <activity android:name=".DescriptionActivity" android:parentActivityName=".CardStackActivity"/>
+        <activity android:name=".platformActivity" android:parentActivityName=".categoryActivity" android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".CardStackActivity"
             android:theme="@style/AppTheme.NoActionBar">

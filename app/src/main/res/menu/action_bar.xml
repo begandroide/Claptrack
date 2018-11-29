@@ -6,9 +6,9 @@
 
     <!-- "Mark Favorite", should appear as action button if possible -->
     <item
-        android:id="@+id/menu_item_share"
-        android:orderInCategory="100"
-        android:title="@string/share"
+        android:id="@+id/menu_item_next"
+        android:orderInCategory="99"
+        android:title="Help"
         app:showAsAction="never"
         />
 

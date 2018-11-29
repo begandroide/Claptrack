@@ -5,11 +5,20 @@ import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuBuilder;
+import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.Utilities.DrawerUtil;
+
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.mikepenz.materialdrawer.Drawer;
 
 public class platformActivity extends AppCompatActivity
 {
@@ -25,6 +34,8 @@ public class platformActivity extends AppCompatActivity
     private ImageView im_threds;
     private ImageView im_one;
     private ImageView im_pc;
+    private Toolbar mToolbar;
+    private Drawer drawer;
 
     private void obtainPlatormsViews() {
         btn_play4 = findViewById(R.id.btn_play4);
@@ -47,19 +58,20 @@ public class platformActivity extends AppCompatActivity
         btn_threds.setVisibility(View.INVISIBLE);
         btn_one.setVisibility(View.INVISIBLE);
         btn_pc.setVisibility(View.INVISIBLE);
-    }
 
+        mToolbar = findViewById(R.id.toolbar_plat);
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.favourites_platforms);
 
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(R.layout.action_bar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        TextView aa= findViewById(R.id.title_menu);
-        aa.setText("Select Yours Platforms");
+        //getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        //getSupportActionBar().setCustomView(R.menu.action_bar);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //TextView aa= findViewById(R.id.title_menu);
+        //aa.setText("Select Yours Platforms");
 
         findViewById(R.id.btn_finalize_welcome).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +84,28 @@ public class platformActivity extends AppCompatActivity
 
         obtainPlatormsViews();
         setOnclickAll();
+        setToolbar();
 
+    }
+
+    public void setToolbar(){
+        TextView tv_fav_cat = findViewById(R.id.toolbar_title_plat);
+        tv_fav_cat.setText("Select Your Platforms");
+
+        setSupportActionBar(mToolbar);
+        tv_fav_cat.setTextSize(24);
+        tv_fav_cat.setText(tv_fav_cat.getText());
+        mToolbar.setNavigationIcon(null);
+        drawer = DrawerUtil.getDrawer(this, mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.action_bar, menu);
+
+        return true;
     }
 
     private void setOnclickAll() {

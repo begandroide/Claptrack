@@ -53,19 +53,5 @@ public class DescriptionActivity extends AppCompatActivity {
         //TextView aa= findViewById(R.id.title_menu);
         //aa.setText("Claptrack");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
