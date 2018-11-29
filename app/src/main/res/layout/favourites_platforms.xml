@@ -6,17 +6,18 @@
     android:layout_height="match_parent"
     android:background="#303030">
 
+
     <GridLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="440dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:columnCount="2"
         android:rowCount="3">
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="5dp">
@@ -40,7 +41,7 @@
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp">
 
@@ -63,7 +64,7 @@
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="155dp"
+            android:layout_height="145dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="5dp">
 
@@ -86,7 +87,7 @@
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="155dp"
+            android:layout_height="145dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="10dp">
 
@@ -109,7 +110,7 @@
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:layout_marginTop="10dp">
 
             <ImageView
@@ -131,7 +132,7 @@
 
         <FrameLayout
             android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_height="120dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp">
 
@@ -152,4 +153,15 @@
                 android:textSize="23dp" />
         </FrameLayout>
     </GridLayout>
+    <Button
+        android:id="@+id/btn_finalize_welcome"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Select me"
+        android:fontFamily="@font/lobsterregular"
+        android:textAlignment="center"
+        android:textSize="25dp"
+        android:background="@drawable/figure_background_select"/>
 </LinearLayout>

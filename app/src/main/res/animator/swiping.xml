@@ -1,4 +1,5 @@
-<objectAnimator android:propertyName="translationX"
+<objectAnimator
+    android:propertyName="translationX"
     android:duration="500"
     android:valueTo="-800f"
     android:valueType="floatType"
