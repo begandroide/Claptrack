@@ -9,27 +9,27 @@
     android:background="@color/Black">
 
     <com.google.android.material.appbar.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ToolbarStyle">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:theme="@style/ToolbarStyle">
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:textColor="@color/White"
+            android:fontFamily="@font/lobsterregular"
+            android:layout_gravity="center"
+            android:textSize="20sp"/>
 
-            <TextView
-                android:id="@+id/toolbar_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
-                android:textColor="@color/White"
-                android:fontFamily="@font/lobsterregular"
-                android:layout_gravity="center"
-                android:textSize="20sp"/>
-
-        </androidx.appcompat.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -38,7 +38,7 @@
         android:layout_height="match_parent"
         android:clipChildren="false">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/button_container"
             android:layout_width="350dp"
             android:layout_height="100dp"
@@ -54,32 +54,61 @@
             android:orientation="horizontal"
             android:paddingBottom="12dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/game_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Game Name"
+                android:layout_marginLeft="22sp"
+                android:layout_marginTop="10sp"
+                android:textSize="30sp"/>
+
+            <TextView
+                android:id="@+id/game_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Genre: text"
+                android:layout_below="@+id/game_name"
+                android:textSize="30sp"
+                android:layout_marginLeft="22sp"/>
+
+
+            <!--LinearLayout
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginStart="230dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="50dp"
                 android:background="@drawable/border2"
-                android:orientation="horizontal">
+                android:orientation="horizontal"-->
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/border2"
+                android:text="##"
+                android:textColor="@color/White"
+                android:textSize="60dp" />
 
-        </LinearLayout>
+            <!--/LinearLayout-->
+
+        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_above="@+id/button_container"
-            android:padding="20dp"
+            android:clipChildren="false"
             android:clipToPadding="false"
-            android:clipChildren="false">
+            android:padding="20dp">
 
             <com.yuyakaido.android.cardstackview.CardStackView
                 android:id="@+id/card_stack_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-            </com.yuyakaido.android.cardstackview.CardStackView>
+                android:layout_height="match_parent"></com.yuyakaido.android.cardstackview.CardStackView>
 
         </RelativeLayout>
 

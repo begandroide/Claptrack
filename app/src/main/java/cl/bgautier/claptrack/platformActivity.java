@@ -96,8 +96,9 @@ public class platformActivity extends AppCompatActivity
         tv_fav_cat.setTextSize(24);
         tv_fav_cat.setText(tv_fav_cat.getText());
         mToolbar.setNavigationIcon(null);
-        drawer = DrawerUtil.getDrawer(this, mToolbar);
+        //drawer = DrawerUtil.getDrawer(this, mToolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override

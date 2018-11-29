@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DescriptionActivity"
-    android:background="#000000">
+    android:background="#000000"
+    android:orientation="vertical">
     <!--<ImageView
         android:id="@+id/icona"
         android:layout_width="match_parent"
@@ -18,7 +19,30 @@
         android:alpha="0.2"
         android:scaleType="fitXY"
         android:src="@drawable/reddeadii" />-->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ToolbarStyle">
+
+            <TextView
+                android:id="@+id/toolbar_title_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+                android:textColor="@color/White"
+                android:fontFamily="@font/lobsterregular"
+                android:layout_gravity="center"
+                android:textSize="20sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
 
     <LinearLayout
@@ -103,8 +127,8 @@
             <TextView
                 android:id="@+id/Description"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="14sp"
                 tools:text="Developed by the creators of Grand Theft Auto V and Red Dead Redemption, Red Dead Redemption 2 is an epic tale of life in America’s unforgiving heartland. The game's vast and atmospheric world will also provide the foundation for a brand new online multiplayer experience." />
@@ -123,4 +147,4 @@
 
     </LinearLayout>
 
-</RelativeLayout>
+</LinearLayout>
