@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-class DescriptionActivity extends AppCompatActivity {
+public class DescriptionActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
 
@@ -22,7 +22,7 @@ class DescriptionActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar);
 
         TextView titulo= findViewById(R.id.Titulo);
-        titulo.setText("Red Redemption 2");
+        titulo.setText("Red Dead Redemption 2");
 
         TextView release= findViewById(R.id.Release);
         release.setText("26th Oct 2018 , a month ago");

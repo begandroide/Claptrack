@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="drawerArrowStyle">@style/DrawerIcon</item>
     </style>
     <style name="WelcomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
@@ -14,6 +15,19 @@
     </style>
     <style name="customfontstyle" parent="@android:style/TextAppearance.Small">
     <item name="android:fontFamily">@font/lobsteritalic</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">@color/White</item>
+    </style>
+
+    <style name="ToolbarStyle">
+        <item name="android:tint">@color/White</item>
     </style>
 
 </resources>

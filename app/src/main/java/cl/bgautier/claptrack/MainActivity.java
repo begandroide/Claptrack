@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         ImageView im_draw = findViewById(R.id.rocket_image);
         AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) getDrawable(R.drawable.animationdrawable);
         im_draw.setImageDrawable(drawable);
-        drawable.start();
+        //drawable.start();
 
         ObjectAnimator.ofFloat(im_draw, "translationX", -800f)
                 .setDuration(3000)

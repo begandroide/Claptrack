@@ -76,7 +76,7 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
         setSupportActionBar(toolbar);
         mTitle.setTextSize(24);
         mTitle.setText(toolbar.getTitle());
-        drawer = DrawerUtil.getDrawer(this,toolbar);
+        drawer = DrawerUtil.getDrawer(this, toolbar);
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
