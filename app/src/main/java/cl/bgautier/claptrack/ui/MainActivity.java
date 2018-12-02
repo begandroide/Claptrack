@@ -1,19 +1,22 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.drawable.AnimatedVectorDrawable;
 import androidx.appcompat.app.AppCompatActivity;
+import cl.bgautier.claptrack.R;
+import cl.bgautier.claptrack.states.GameTrackerState;
+
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import org.rekotlin.StoreSubscriber;
 
 
-
-public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener
+public class MainActivity extends AppCompatActivity implements GestureDetector.OnGestureListener, StoreSubscriber<GameTrackerState>
 {
     GestureDetector gestureDetector;
 
@@ -93,5 +96,10 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     public boolean onDown(MotionEvent arg0) {
         // TODO Auto-generated method stub
         return false;
+    }
+
+    @Override
+    public void newState(GameTrackerState gameTrackerState) {
+
     }
 }

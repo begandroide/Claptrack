@@ -1,17 +1,14 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
-import cl.bgautier.claptrack.Utilities.DrawerUtil;
+import cl.bgautier.claptrack.R;
 
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;

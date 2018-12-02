@@ -1,4 +1,4 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,17 +19,25 @@ import com.yuyakaido.android.cardstackview.CardStackView;
 import com.yuyakaido.android.cardstackview.Direction;
 import com.yuyakaido.android.cardstackview.StackFrom;
 
+import org.rekotlin.Store;
+import org.rekotlin.StoreSubscriber;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-
+import cl.bgautier.claptrack.ClapTrackApplication;
+import cl.bgautier.claptrack.R;
 import cl.bgautier.claptrack.Utilities.CardStackAdapter;
 import cl.bgautier.claptrack.Utilities.DrawerUtil;
 import cl.bgautier.claptrack.Utilities.Spot;
 import cl.bgautier.claptrack.Utilities.SpotDiffCallback;
+import cl.bgautier.claptrack.actions.LoadGameList;
+import cl.bgautier.claptrack.models.VideoGameObject;
+import cl.bgautier.claptrack.states.AppState;
+import cl.bgautier.claptrack.states.GameTrackerState;
 
-public class CardStackActivity extends AppCompatActivity implements CardStackListener {
+public class CardStackActivity extends AppCompatActivity implements CardStackListener, StoreSubscriber<GameTrackerState> {
 
     private static final String TAG = CardStackActivity.class.getSimpleName();
 
@@ -37,15 +45,28 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
     private CardStackAdapter adapter;
     private CardStackView cardStackView;
     private Drawer drawer;
+    private Store<AppState> store = ClapTrackApplication.Companion.getStore();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.card_stack);
         setupNavigation();
-        setupCardStackView();
+        store.dispatch(new LoadGameList());
     }
 
+    @Override
+    protected void onStart(){
+        super.onStart();
+        store.subscribe(this, it ->
+            it.select(select -> select.getGameTrackerState()));
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        store.unsubscribe(this);
+    }
     @Override
     public void onBackPressed() {
     }
@@ -165,5 +186,15 @@ public class CardStackActivity extends AppCompatActivity implements CardStackLis
         spots.add(new Spot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/jfxfycbvrr9bkd1jsv2f.jpg"));
 
         return spots;
+    }
+
+    @Override
+    public void newState(GameTrackerState state) {
+        List<VideoGameObject> games = state.getGameTrackerList();
+        if(games != null){
+            for(VideoGameObject game : games){
+                Log.i(TAG,  game.getName());
+            }
+        }
     }
 }
