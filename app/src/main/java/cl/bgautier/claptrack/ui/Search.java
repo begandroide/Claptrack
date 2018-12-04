@@ -1,15 +1,13 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.R;
 
 public class Search extends AppCompatActivity implements SearchView.OnQueryTextListener {
 

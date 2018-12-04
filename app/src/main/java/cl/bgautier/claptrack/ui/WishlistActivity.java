@@ -1,4 +1,4 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.os.Bundle;
 import android.widget.ListView;
@@ -10,6 +10,7 @@ import java.util.HashMap;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.R;
 
 public class WishlistActivity extends AppCompatActivity {
 

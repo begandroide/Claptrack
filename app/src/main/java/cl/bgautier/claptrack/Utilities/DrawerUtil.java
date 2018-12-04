@@ -7,21 +7,14 @@ import android.preference.PreferenceManager;
 import android.view.View;
 
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.materialdrawer.AccountHeader;
-import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
-import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
-import com.mikepenz.materialdrawer.model.ProfileDrawerItem;
-import com.mikepenz.materialdrawer.model.SecondaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
-import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import androidx.appcompat.widget.Toolbar;
-import cl.bgautier.claptrack.R;
-import cl.bgautier.claptrack.Search;
-import cl.bgautier.claptrack.WishlistActivity;
+import cl.bgautier.claptrack.ui.Search;
+import cl.bgautier.claptrack.ui.WishlistActivity;
 
 
 public class DrawerUtil {

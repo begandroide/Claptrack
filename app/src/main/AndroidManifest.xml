@@ -37,14 +37,14 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
-        <activity android:name=".Search"
-            android:parentActivityName=".CardStackActivity"
+        <activity android:name=".ui.Search"
+            android:parentActivityName=".ui.CardStackActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".Mainlist"
-            android:parentActivityName=".Search"
+        <activity android:name=".ui.Mainlist"
+            android:parentActivityName=".ui.Search"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".WishlistActivity"
-            android:parentActivityName=".CardStackActivity"
+        <activity android:name=".ui.WishlistActivity"
+            android:parentActivityName=".ui.CardStackActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 
 

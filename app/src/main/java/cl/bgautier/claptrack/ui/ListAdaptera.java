@@ -1,4 +1,4 @@
-package cl.bgautier.claptrack;
+package cl.bgautier.claptrack.ui;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import cl.bgautier.claptrack.R;
 
 
 public class ListAdaptera extends BaseAdapter {
