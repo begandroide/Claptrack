@@ -43,7 +43,9 @@
         <activity android:name=".Mainlist"
             android:parentActivityName=".Search"
             android:theme="@style/AppTheme.NoActionBar"/>
-
+        <activity android:name=".WishlistActivity"
+            android:parentActivityName=".CardStackActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
 
 
     </application>
