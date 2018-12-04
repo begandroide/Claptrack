@@ -20,6 +20,7 @@ import com.mikepenz.materialdrawer.model.interfaces.IProfile;
 
 import androidx.appcompat.widget.Toolbar;
 import cl.bgautier.claptrack.R;
+import cl.bgautier.claptrack.Search;
 
 
 public class DrawerUtil {
@@ -44,7 +45,7 @@ public class DrawerUtil {
                             //drawerItemPreferences,
                             //drawerItemManageGroups,
                             //drawerItemWishlist,
-                           // drawerItemFind
+                            // drawerItemFind
                             //new DividerDrawerItem(),
                             //drawerItemSettings,
                             //drawerItemAbout,
@@ -53,6 +54,14 @@ public class DrawerUtil {
                     .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                         @Override
                         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                            if ( drawerItem.getIdentifier() == 4) {
+                                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(activity).edit();
+                                editor.clear().commit();
+                                Intent intent = new Intent(activity, Search.class);
+                                view.getContext().startActivity(intent);
+                                activity.finish();
+
+                            }
                             /*if ( drawerItem.getIdentifier() == 2 ) {
                                 if (!activity.getLocalClassName().equals("ListEventActivity")) {
                                     Intent intent = new Intent(activity, ListEventActivity.class);
@@ -149,6 +158,13 @@ public class DrawerUtil {
                     .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                         @Override
                         public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
+                            if ( drawerItem.getIdentifier() == 4) {
+                                SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(activity).edit();
+                                editor.clear().commit();
+                                Intent intent = new Intent(activity, Search.class);
+                                view.getContext().startActivity(intent);
+
+                            }
                             /*if ( drawerItem.getIdentifier() == 2 ) {
                                 if (!activity.getLocalClassName().equals("ListEventActivity")) {
                                     Intent intent = new Intent(activity, ListEventActivity.class);

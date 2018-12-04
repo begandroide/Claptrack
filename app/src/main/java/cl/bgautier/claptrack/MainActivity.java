@@ -41,11 +41,15 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         }
 
         if (motionEvent2.getY() - motionEvent1.getY() > 50) {
-            Toast.makeText(MainActivity.this, "You Swiped Down!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "You Swiped Down!", Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, categoryActivity.class);
+            startActivity(intent);
+            finish();
             return true;
         }
 
-        if (motionEvent1.getX() - motionEvent2.getX() > 20){
+        if (motionEvent1.getX() - motionEvent2.getX() > 20 ){
             Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, categoryActivity.class);
             startActivity(intent);
