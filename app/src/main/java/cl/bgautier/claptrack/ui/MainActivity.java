@@ -39,13 +39,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     public boolean onFling(MotionEvent motionEvent1, MotionEvent motionEvent2, float X, float Y) {
         if (motionEvent1.getY() - motionEvent2.getY() > 50) {
-            Toast.makeText(MainActivity.this, "You Swiped up!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "You Swiped up!", Toast.LENGTH_LONG).show();
             return true;
         }
 
         if (motionEvent2.getY() - motionEvent1.getY() > 50) {
             //Toast.makeText(MainActivity.this, "You Swiped Down!", Toast.LENGTH_LONG).show();
-            Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, categoryActivity.class);
             startActivity(intent);
             finish();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         }
 
         if (motionEvent1.getX() - motionEvent2.getX() > 20 ){
-            Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, categoryActivity.class);
             startActivity(intent);
             finish();
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         }
 
         if (motionEvent2.getX() - motionEvent1.getX() > 50) {
-            Toast.makeText(MainActivity.this, "You Swiped Right!", Toast.LENGTH_LONG).show();
+            //Toast.makeText(MainActivity.this, "You Swiped Right!", Toast.LENGTH_LONG).show();
             return true;
         } else {
             return true;

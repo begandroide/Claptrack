@@ -115,6 +115,8 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
             @Override
             public void onCardClicked(int index) {
                 Log.d("CardStackView", "onCardClicked: " + index);
+                Intent intent = new Intent(getApplicationContext(), DescriptionActivity.class);
+                startActivity(intent);
             }
         });
     }
