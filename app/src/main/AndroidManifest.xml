@@ -37,6 +37,13 @@
                 <action android:name="android.intent.action.VIEW"/>
             </intent-filter>
         </activity>
+        <activity android:name=".Search"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Mainlist"
+            android:parentActivityName=".Search"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+
 
     </application>
 
