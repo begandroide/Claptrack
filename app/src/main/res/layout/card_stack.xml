@@ -106,9 +106,28 @@
             android:padding="20dp">
 
             <com.yuyakaido.android.cardstackview.CardStackView
-                android:id="@+id/card_stack_view"
+                android:id="@+id/activity_main_card_stack_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"></com.yuyakaido.android.cardstackview.CardStackView>
+                android:layout_height="match_parent"
+                android:paddingTop="15dp"
+                android:clipToPadding="false"
+                app:visibleCount="3"
+                app:swipeThreshold="0.75"
+                app:translationDiff="12"
+                app:scaleDiff="0.02"
+                app:stackFrom="top"
+                app:elevationEnabled="true"
+                app:swipeEnabled="true"
+                app:swipeDirection="freedom_no_bottom"
+                app:leftOverlay="@layout/overlay_left"
+                app:rightOverlay="@layout/overlay_right"
+                app:topOverlay="@layout/overlay_top" />
+            
+            <ProgressBar
+                android:id="@+id/activity_main_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"/>
 
         </RelativeLayout>
 

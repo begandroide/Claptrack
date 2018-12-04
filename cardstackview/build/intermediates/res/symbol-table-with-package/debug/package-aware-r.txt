@@ -1,6 +1,8 @@
 com.yuyakaido.android.cardstackview
 attr alpha
+attr bottomOverlay
 attr coordinatorLayoutStyle
+attr elevationEnabled
 attr fastScrollEnabled
 attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
@@ -24,11 +26,21 @@ attr layout_behavior
 attr layout_dodgeInsetEdges
 attr layout_insetEdge
 attr layout_keyline
+attr leftOverlay
 attr reverseLayout
+attr rightOverlay
+attr scaleDiff
 attr spanCount
+attr stackFrom
 attr stackFromEnd
 attr statusBarBackground
+attr swipeDirection
+attr swipeEnabled
+attr swipeThreshold
+attr topOverlay
+attr translationDiff
 attr ttcIndex
+attr visibleCount
 color notification_action_color_filter
 color notification_icon_bg_color
 color ripple_material_light
@@ -81,17 +93,18 @@ id actions
 id async
 id blocking
 id bottom
-id bottom_overlay
 id chronometer
 id end
 id forever
+id freedom
+id freedom_no_bottom
+id horizontal
 id icon
 id icon_group
 id info
 id italic
 id item_touch_helper_previous_elevation
 id left
-id left_overlay
 id line1
 id line3
 id none
@@ -101,7 +114,6 @@ id notification_main_column
 id notification_main_column_container
 id right
 id right_icon
-id right_overlay
 id right_side
 id start
 id tag_transition_group
@@ -112,7 +124,7 @@ id text2
 id time
 id title
 id top
-id top_overlay
+id vertical
 integer status_bar_notification_info_maxnum
 layout notification_action
 layout notification_action_tombstone
@@ -120,7 +132,7 @@ layout notification_template_custom_big
 layout notification_template_icon_group
 layout notification_template_part_chronometer
 layout notification_template_part_time
-layout overlay
+string app_name
 string status_bar_notification_info_overflow
 style TextAppearance_Compat_Notification
 style TextAppearance_Compat_Notification_Info
@@ -130,6 +142,7 @@ style TextAppearance_Compat_Notification_Title
 style Widget_Compat_NotificationActionContainer
 style Widget_Compat_NotificationActionText
 style Widget_Support_CoordinatorLayout
+styleable CardStackView bottomOverlay elevationEnabled leftOverlay rightOverlay scaleDiff stackFrom swipeDirection swipeEnabled swipeThreshold topOverlay translationDiff visibleCount
 styleable ColorStateListItem alpha android_alpha android_color
 styleable CoordinatorLayout keylines statusBarBackground
 styleable CoordinatorLayout_Layout android_layout_gravity layout_anchor layout_anchorGravity layout_behavior layout_dodgeInsetEdges layout_insetEdge layout_keyline

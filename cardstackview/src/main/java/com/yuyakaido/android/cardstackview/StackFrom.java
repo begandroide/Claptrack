@@ -1,9 +1,6 @@
 package com.yuyakaido.android.cardstackview;
 
 public enum StackFrom {
-    None,
-    Top,
-    Bottom,
-    Left,
-    Right,
+    Bottom, Top;
+    public static final StackFrom DEFAULT = Top;
 }
