@@ -22,6 +22,22 @@ data class VideoGameObject(
     @SerializedName("url")
     var url: String? = null,
 
+    @ColumnInfo(name="rating")
+    @SerializedName("rating")
+    var rating: Double? = null,
+
+    @ColumnInfo(name="aggregated_rating")
+    @SerializedName("aggregated_rating")
+    var aggregated_rating: Double? = null,
+
+    @ColumnInfo(name="total_rating")
+    @SerializedName("total_rating")
+    var total_rating: Double? = null,
+
+    @ColumnInfo(name="category")
+    @SerializedName("category")
+    var category: Int? = null,
+
         @ColumnInfo(name = "summary")
     @SerializedName("summary")
     var summary: String? = null,
@@ -29,6 +45,15 @@ data class VideoGameObject(
         @ColumnInfo(name = "storyline")
     @SerializedName("storyline")
     var storyline: String? = null,
+
+    @Ignore
+    var publishers: List<PublisherObject>? = null,
+
+    @Ignore
+    var themes: List<ThemeObject>? = null,
+
+    @Ignore
+    var genres: List<GenreObject>? = null,
 
         @Ignore
     var developers: List<CompanyObject>? = null,
@@ -40,7 +65,7 @@ data class VideoGameObject(
     var pegi: PegiObject? = null,
 
         @Ignore
-    var screenShoots: List<ScreenshotsObject>? = null,
+    var screenshots: List<ScreenshotsObject>? = null,
 
         @Ignore
     var cover: CoverObject? = null,

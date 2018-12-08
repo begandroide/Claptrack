@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey
     childColumns = arrayOf("game_id")
 )))
 data class CoverObject(
-        @PrimaryKey var imageId: Int,
+        @PrimaryKey var id: Int,
         var url: String? = null,
         var width: Int? = null,
         var height: Int? = null,

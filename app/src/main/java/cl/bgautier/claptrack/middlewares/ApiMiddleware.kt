@@ -74,7 +74,7 @@ private fun getNextPageOfGames(dispatch: DispatchFunction, nextPageUrl: String){
         .subscribe(
             {res ->
                 val games: List<VideoGameObject> = res.body()!!
-                val nextPage: String = res.headers().get("X-Next-Page")!!
+                val nextPage: String = res.headers().get("X-Next-Page")!!.substring(1)
                 games.forEach{game -> Log.d("GAME", game.name)}
                 dispatch(SetGameList(games))
                 dispatch(SetNextPage(nextPage))

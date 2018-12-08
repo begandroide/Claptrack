@@ -264,6 +264,8 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         if(games != null){
             for(VideoGameObject game : games){
                 Log.i(TAG,  game.getName());
+                Log.i(TAG, game.getCover().getCloudinary_id());
+                Log.i(TAG, game.getRating().toString());
             }
         }
     }

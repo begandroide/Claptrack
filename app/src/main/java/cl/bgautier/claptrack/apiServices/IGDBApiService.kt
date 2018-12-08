@@ -61,13 +61,13 @@ interface IGDBApiService {
     ): Observable<Response<List<VideoGameObject>>>
 
     @Headers(userKey, accept)
-    @GET("games/?scroll=1&fields=*&expand=developers")
+    @GET("games/?order=rating&fields=themes.name,themes.slug,themes.url,genres.name,genres.slug,genres.url,name,url,rating,aggregated_rating,total_rating,category,summary,storyline,publishers,developers,esrb,pegi,screenshots,cover,videos&scroll=1&limit=50&filter[platforms][any]=49&expand=developers,publishers,themes,genres")
     fun games(@Query("order") order: String = "rating",
               @Query("limit") limit: Int = 50,
               @Query("filter[platforms][any]") platforms: String?
     ): Observable<Response<List<VideoGameObject>>>
 
     @Headers(userKey, accept)
-    @GET("games{next}")
+    @GET("{next}")
     fun nextPage(@Path("next") next: String): Observable<Response<List<VideoGameObject>>>
 }
