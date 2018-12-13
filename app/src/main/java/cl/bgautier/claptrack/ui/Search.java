@@ -6,6 +6,8 @@ import android.util.Log;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.example.eduardopozo.claptrack.actions.SearchGame;
+
 import org.rekotlin.Store;
 import org.rekotlin.StoreSubscriber;
 
@@ -51,9 +53,7 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        Intent myintent = new Intent(getApplicationContext(),Mainlist.class);
-        startActivity(myintent);
-
+        store.dispatch(new SearchGame(query));
         return true;
     }
 
@@ -81,9 +81,13 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     public void newState(SearchState searchState) {
-        List<VideoGameObject> games = searchState.getResults();
-        for(VideoGameObject game : games){
-            Log.i("Game Result", game.getName());
+        if(searchState != null){
+            List<VideoGameObject> games = searchState.getResults();
+            if(games != null){
+                for(VideoGameObject game : games){
+                    Log.i("Game Result", game.getName());
+                }
+            }
         }
     }
 }

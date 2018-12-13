@@ -5,5 +5,6 @@ import org.rekotlin.Action
 
 fun appReducer(action: Action, appState: AppState?): AppState =
         AppState(
-            gameTrackerState = gameTrackerReducer(action, appState?.gameTrackerState)
+            gameTrackerState = gameTrackerReducer(action, appState?.gameTrackerState),
+            searchState = searchReducer(action, appState?.searchState)
         )

@@ -8,6 +8,7 @@ import retrofit2.http.*
 const val userKey: String = "user-key:f4b39245776ccc5ddd540d43b73ead24"
 const val accept: String = "Accept:application/json"
 const val fields: String = "themes.name,themes.slug,themes.url,genres.name,genres.slug,genres.url,name,url,rating,aggregated_rating,total_rating,category,summary,storyline,publishers,developers,esrb,pegi,screenshots,cover,videos"
+const val expands: String = "developers,publishers,themes,genres"
 /*
 * 18 - NES
 * 30 - Sega 32X
@@ -53,7 +54,7 @@ interface IGDBApiService {
     fun getGamesByIds(@Path("ids") ids: String): Observable<List<VideoGameObject>>
 
     @Headers(userKey, accept)
-    @GET("games/?scroll=1&fields=$fields")
+    @GET("games/?scroll=1&fields=$fields&expand=$expands")
     fun search(@Query("search") query: String,
                @Query("order") order: String = "rating",
                @Query("limit") limit: Int = 50,
