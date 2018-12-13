@@ -61,9 +61,9 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="35dp"
+                        android:layout_marginStart="10pt"
+                        android:layout_marginTop="5pt"
+                        android:layout_marginBottom="20pt"
                         android:text="Game Name"
                         android:textSize="30dp" />
 
@@ -71,26 +71,26 @@
                         android:id="@+id/game_genre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="45dp"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginStart="10pt"
+                        android:layout_marginTop="20pt"
+                        android:layout_marginBottom="5pt"
                         android:text="Genre: text"
-                        android:textSize="30dp" />
+                        android:textSize="30sp" />
 
                     <TextView
                         android:id="@+id/game_ranking"
                         android:layout_width="80sp"
-                        android:layout_height="80dp"
+                        android:layout_height="80sp"
                         android:layout_alignParentEnd="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginEnd="20dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="5pt"
+                        android:layout_marginEnd="5pt"
+                        android:layout_marginBottom="5pt"
                         android:background="@drawable/border2"
                         android:text="##"
                         android:gravity="center_horizontal"
                         android:textColor="@color/White"
-                        android:textSize="60dp"
+                        android:textSize="60sp"
                         android:textStyle="bold" />
 
 
