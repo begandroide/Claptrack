@@ -244,7 +244,7 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
 
     private List<TouristSpot> createTouristSpots() {
         List<TouristSpot> spots = new ArrayList<>();
-        spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
+        //spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
         /*spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/j6etkqnsr5xolxr06ctj.jpg"));
         spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/obrgi1zlum5prc52vcjs.jpg"));
         spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/klrrql6nidmxmmyef7zu.jpg"));
@@ -261,9 +261,9 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         return spots;
     }
 
-    private void addLast(String url) {
+    private void addLast(String name, String url) {
         LinkedList<TouristSpot> spots = extractRemainingTouristSpots();
-        spots.addLast(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/"+url+".jpg"));
+        spots.addLast(new TouristSpot(name,"http://images.igdb.com/igdb/image/upload/t_cover_big_2x/"+url+".jpg"));
         adapter.clear();
         adapter.addAll(spots);
         adapter.notifyDataSetChanged();
@@ -276,7 +276,7 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
 
         if(games != null){
 
-            addLast(games.get(index).getCover().getCloudinary_id());
+            addLast(games.get(index).getName(), games.get(index).getCover().getCloudinary_id());
 
             Log.i(TAG,  games.get(index).getName());
             //Log.i(TAG,  games.get(index).getGenres().get(0).getName()); //Agregar try Catch

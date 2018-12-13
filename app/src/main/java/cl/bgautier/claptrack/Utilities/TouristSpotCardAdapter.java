@@ -1,11 +1,13 @@
 package cl.bgautier.claptrack.Utilities;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -32,6 +34,10 @@ public class TouristSpotCardAdapter extends ArrayAdapter<TouristSpot> {
         }
 
         TouristSpot spot = getItem(position);
+
+        TextView game_name = contentView.findViewById(R.id.game_name);
+        Log.i("Adapter", spot.name);
+        //game_name.setText(spot.name);
 
         Glide.with(getContext()).load(spot.url).into(holder.image);
 
