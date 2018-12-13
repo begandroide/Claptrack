@@ -61,21 +61,21 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentBottom="true"
-                        android:layout_marginStart="20sp"
+                        android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="35dp"
                         android:text="Game Name"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/game_genre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="20sp"
-                        android:layout_marginTop="45sp"
-                        android:layout_marginBottom="5sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="45dp"
+                        android:layout_marginBottom="5dp"
                         android:text="Genre: text"
-                        android:textSize="30sp" />
+                        android:textSize="30dp" />
 
                     <TextView
                         android:id="@+id/game_ranking"
@@ -88,7 +88,7 @@
                         android:layout_marginBottom="10dp"
                         android:background="@drawable/border2"
                         android:text="##"
-                        android:textAlignment="center"
+                        android:gravity="center_horizontal"
                         android:textColor="@color/White"
                         android:textSize="60dp"
                         android:textStyle="bold" />
