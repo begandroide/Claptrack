@@ -2,25 +2,51 @@ package cl.bgautier.claptrack.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import org.rekotlin.Store;
+import org.rekotlin.StoreSubscriber;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.ClapTrackApplication;
 import cl.bgautier.claptrack.R;
+import cl.bgautier.claptrack.models.VideoGameObject;
+import cl.bgautier.claptrack.states.AppState;
+import cl.bgautier.claptrack.states.SearchState;
 
-public class Search extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class Search extends AppCompatActivity implements SearchView.OnQueryTextListener, StoreSubscriber<SearchState> {
 
     SearchView editsearch;
+    private Store<AppState> store = ClapTrackApplication.Companion.getStore();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
         setupNavigation();
-
         editsearch = (SearchView) findViewById(R.id.search);
         editsearch.setOnQueryTextListener(this);
 
+    }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        store.subscribe(this, it ->
+            it.select(select -> select.getSearchState())
+        );
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        store.unsubscribe(this);
     }
 
     @Override
@@ -53,4 +79,11 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    @Override
+    public void newState(SearchState searchState) {
+        List<VideoGameObject> games = searchState.getResults();
+        for(VideoGameObject game : games){
+            Log.i("Game Result", game.getName());
+        }
+    }
 }

@@ -2,8 +2,11 @@ package cl.bgautier.claptrack
 
 import android.app.Application
 import androidx.room.Room
+import androidx.room.RoomDatabase
+import androidx.sqlite.db.SupportSQLiteDatabase
 import cl.bgautier.claptrack.reducers.appReducer
 import cl.bgautier.claptrack.middlewares.apiMiddleWare
+import cl.bgautier.claptrack.models.UserPreferencesObject
 import cl.bgautier.claptrack.storage.ClaptrackDatabase
 import org.rekotlin.Store
 import timber.log.Timber
@@ -13,6 +16,8 @@ val Store = Store(
     state = null,
     middleware = listOf(apiMiddleWare)
 )
+
+val Preference: UserPreferencesObject =  UserPreferencesObject(1, "default")
 
 
 inline fun debugMode(block: () -> Unit) {
@@ -26,9 +31,7 @@ class ClapTrackApplication: Application() {
         super.onCreate()
         instance = this
         debugMode { Timber.plant(Timber.DebugTree())}
-        claptrackDatabase = Room
-                            .databaseBuilder(this, ClaptrackDatabase::class.java, "ClapTrackDB")
-                            .build()
+        claptrackDatabase = ClaptrackDatabase.getInstance(this)
     }
 
     companion object {
