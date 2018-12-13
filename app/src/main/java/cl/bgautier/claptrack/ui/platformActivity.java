@@ -220,16 +220,7 @@ public class platformActivity extends AppCompatActivity implements GestureDetect
             return true;
         }
 
-        if (motionEvent2.getY() - motionEvent1.getY() > 50) {
-            //Toast.makeText(MainActivity.this, "You Swiped Down!", Toast.LENGTH_LONG).show();
-            //Toast.makeText(MainActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(this, categoryActivity.class);
-            startActivity(intent);
-            finish();
-            return true;
-        }
-
-        if (motionEvent1.getX() - motionEvent2.getX() > 20 ){
+        if (motionEvent1.getX() - motionEvent2.getX() > 50 ){
             Toast.makeText(platformActivity.this, "You Swiped Left!", Toast.LENGTH_LONG).show();
             //aqui es necesario guardar los elegidos, estan en hashmaps elected
             Intent intent = new Intent(this, CardStackActivity.class);
@@ -238,7 +229,7 @@ public class platformActivity extends AppCompatActivity implements GestureDetect
             return true;
         }
 
-        if (motionEvent2.getX() - motionEvent1.getX() > 20) {
+        if (motionEvent2.getX() - motionEvent1.getX() > 50) {
             Toast.makeText(platformActivity.this, "You Swiped Right!", Toast.LENGTH_LONG).show();
             Intent intent = new Intent(this, categoryActivity.class);
             startActivity(intent);
