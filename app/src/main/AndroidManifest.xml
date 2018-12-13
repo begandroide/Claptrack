@@ -28,7 +28,6 @@
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".ui.CardStackActivity"/>
         <activity android:name=".ui.platformActivity"
-            android:parentActivityName=".ui.categoryActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
         <activity android:name=".ui.CardStackActivity"
@@ -44,6 +43,9 @@
             android:parentActivityName=".ui.Search"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".ui.WishlistActivity"
+            android:parentActivityName=".ui.CardStackActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".ui.PreferencesActivity"
             android:parentActivityName=".ui.CardStackActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
 

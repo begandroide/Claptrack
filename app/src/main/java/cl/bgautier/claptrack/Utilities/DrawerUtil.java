@@ -13,6 +13,7 @@ import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
 import androidx.appcompat.widget.Toolbar;
+import cl.bgautier.claptrack.ui.PreferencesActivity;
 import cl.bgautier.claptrack.ui.Search;
 import cl.bgautier.claptrack.ui.WishlistActivity;
 
@@ -161,12 +162,11 @@ public class DrawerUtil {
                             } else if( drawerItem.getIdentifier() == 3 ) {
                                 Intent intent = new Intent(activity, WishlistActivity.class);
                                 view.getContext().startActivity(intent);
+                            } else if ( drawerItem.getIdentifier() == 2 ) {
+                                Intent intent = new Intent(activity, PreferencesActivity.class);
+                                view.getContext().startActivity(intent);
                                 }
-                            /*if ( drawerItem.getIdentifier() == 2 ) {
-                                if (!activity.getLocalClassName().equals("ListEventActivity")) {
-                                    Intent intent = new Intent(activity, ListEventActivity.class);
-                                    view.getContext().startActivity(intent);
-                                }
+                            /*
                             }else if ( drawerItem.getIdentifier() == 3 ) {
                                 if (!activity.getLocalClassName().equals("CreateAgendaActivity")) {
                                     Intent intent = new Intent(activity, CreateAgendaActivity.class);
