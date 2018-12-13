@@ -78,4 +78,5 @@ dependencies {
     implementation "android.arch.persistence.room:rxjava2:$room_version"
     implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.2.71"
     implementation 'com.jakewharton.timber:timber:4.7.1'
+    implementation 'org.apache.commons:commons-lang3:3.0'
 }

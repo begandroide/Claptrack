@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
+import org.w3c.dom.Text;
+
 import cl.bgautier.claptrack.R;
 
 public class TouristSpotCardAdapter extends ArrayAdapter<TouristSpot> {
@@ -36,8 +38,11 @@ public class TouristSpotCardAdapter extends ArrayAdapter<TouristSpot> {
         TouristSpot spot = getItem(position);
 
         TextView game_name = contentView.findViewById(R.id.game_name);
-        Log.i("Adapter", spot.name);
-        //game_name.setText(spot.name);
+        TextView game_genre = contentView.findViewById(R.id.game_genre);
+        TextView game_ranking = contentView.findViewById(R.id.game_ranking);
+        game_name.setText(spot.name);
+        game_genre.setText(spot.genre);
+        game_ranking.setText(spot.ranking);
 
         Glide.with(getContext()).load(spot.url).into(holder.image);
 
@@ -54,10 +59,16 @@ public class TouristSpotCardAdapter extends ArrayAdapter<TouristSpot> {
     private static class ViewHolder {
         public ImageView image;
         public ImageView ivInfo;
+        public TextView Game_name;
+        public TextView Game_genre;
+        public TextView Ranking;
 
         public ViewHolder(View view) {
             this.image = (ImageView) view.findViewById(R.id.item_tourist_spot_card_image);
             this.ivInfo = (ImageView) view.findViewById(R.id.iv_info);
+            this.Game_name = (TextView) view.findViewById(R.id.game_name);
+            this.Game_genre = (TextView) view.findViewById(R.id.game_genre);
+            this.Ranking = (TextView) view.findViewById(R.id.game_ranking);
         }
     }
 

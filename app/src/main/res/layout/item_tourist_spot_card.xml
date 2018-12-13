@@ -14,29 +14,108 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/item_tourist_spot_card_image"
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_height="fill_parent"
             android:layout_width="match_parent"
-            android:layout_height="399dp"
-            android:scaleType="centerCrop" />
+            android:weightSum="1.0">
 
-        <cl.bgautier.claptrack.Utilities.SwipeClickabilityImageView
-            android:id="@+id/iv_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:padding="16dp"
-            android:src="@drawable/ic_action_info" />
+            <LinearLayout
+                android:layout_weight="0.85"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                android:id="@+id/item_tourist_spot_card_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop" />
+
+                <cl.bgautier.claptrack.Utilities.SwipeClickabilityImageView
+                    android:id="@+id/iv_info"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:padding="16dp"
+                    android:src="@drawable/ic_action_info" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_weight="0.15"
+                android:layout_height="0dp"
+                android:layout_width="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/button_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/game_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="35dp"
+                        android:text="Game Name"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/game_genre"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20sp"
+                        android:layout_marginTop="45sp"
+                        android:layout_marginBottom="5sp"
+                        android:text="Genre: text"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:id="@+id/game_ranking"
+                        android:layout_width="80sp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/border2"
+                        android:text="##"
+                        android:textAlignment="center"
+                        android:textColor="@color/White"
+                        android:textSize="60dp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+
+
+<!--
 
         <RelativeLayout
             android:id="@+id/button_container"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="93dp"
             android:layout_below="@+id/item_tourist_spot_card_image"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="-92dp"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/border"
@@ -48,10 +127,11 @@
             <TextView
                 android:id="@+id/game_name"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="55dp"
+                android:layout_alignParentBottom="true"
                 android:layout_marginLeft="22sp"
                 android:layout_marginTop="10sp"
-                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="37dp"
                 android:text="Game Name"
                 android:textSize="30sp" />
 
@@ -61,6 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/game_name"
                 android:layout_marginLeft="22sp"
+                android:layout_marginTop="21dp"
                 android:text="Genre: text"
                 android:textSize="30sp" />
 
@@ -69,17 +150,13 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentBottom="true"
-                android:layout_marginTop="12dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/border2"
                 android:text="##"
                 android:textColor="@color/White"
                 android:textSize="60dp" />
 
-            <!--/LinearLayout-->
 
         </RelativeLayout>
 
-    </RelativeLayout>
-
-</androidx.cardview.widget.CardView>
+        -->

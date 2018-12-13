@@ -29,6 +29,7 @@ import org.rekotlin.StoreSubscriber;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 
 import cl.bgautier.claptrack.ClapTrackApplication;
@@ -261,9 +262,9 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         return spots;
     }
 
-    private void addLast(String name, String url) {
+    private void addLast(String name, String genre, String ranking, String url) {
         LinkedList<TouristSpot> spots = extractRemainingTouristSpots();
-        spots.addLast(new TouristSpot(name,"http://images.igdb.com/igdb/image/upload/t_cover_big_2x/"+url+".jpg"));
+        spots.addLast(new TouristSpot(name, genre , ranking, "http://images.igdb.com/igdb/image/upload/t_cover_big_2x/"+url+".jpg"));
         adapter.clear();
         adapter.addAll(spots);
         adapter.notifyDataSetChanged();
@@ -275,13 +276,22 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         int index = state.getCurrentGameIndex();
 
         if(games != null){
+            String genre = "No Information";
+            try{
+                genre = games.get(index).getGenres().get(0).getName();
+            }catch (Exception msg){
+                Log.d(TAG, String.valueOf(msg));
+            }
 
-            addLast(games.get(index).getName(), games.get(index).getCover().getCloudinary_id());
+            String rank = games.get(index).getRating().toString();
 
-            Log.i(TAG,  games.get(index).getName());
+            addLast( StringUtils.abbreviate(games.get(index).getName(), 15),
+                    genre , rank.substring(0, Math.min(rank.length(), 2)), games.get(index).getCover().getCloudinary_id());
+
+            //Log.i(TAG,  games.get(index).getName());
             //Log.i(TAG,  games.get(index).getGenres().get(0).getName()); //Agregar try Catch
-            Log.i(TAG, games.get(index).getCover().getCloudinary_id());
-            Log.i(TAG, games.get(index).getRating().toString());
+            //Log.i(TAG, games.get(index).getCover().getCloudinary_id());
+            //Log.i(TAG, games.get(index).getRating().toString());
         }
     }
 }
