@@ -33,4 +33,9 @@
     <style name="ToolbarStyleWithoutIcon">
     </style>
 
+    <style name="Etiquetas">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:background">@drawable/background_label_fab</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
 </resources>
