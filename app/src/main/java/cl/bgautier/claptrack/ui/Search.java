@@ -25,8 +25,9 @@ import cl.bgautier.claptrack.states.SearchState;
 public class Search extends AppCompatActivity implements SearchView.OnQueryTextListener, StoreSubscriber<SearchState> {
 
     SearchView editsearch;
-    private Store<AppState> store = ClapTrackApplication.Companion.getStore();
+    //private Store<AppState> store = ClapTrackApplication.Companion.getStore();
 
+    public static String Texto=new String();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
 
     }
 
-    @Override
+    /*@Override
     protected void onStart(){
         super.onStart();
         store.subscribe(this, it ->
@@ -49,11 +50,14 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
     protected void onStop(){
         super.onStop();
         store.unsubscribe(this);
-    }
+    }*/
 
     @Override
     public boolean onQueryTextSubmit(String query) {
-        store.dispatch(new SearchGame(query));
+        //store.dispatch(new SearchGame(query));
+        Texto=query;
+        Intent myintent = new Intent(getApplicationContext(),Mainlist.class);
+        startActivity(myintent);
         return true;
     }
 
@@ -81,13 +85,13 @@ public class Search extends AppCompatActivity implements SearchView.OnQueryTextL
 
     @Override
     public void newState(SearchState searchState) {
-        if(searchState != null){
+        /*if(searchState != null){
             List<VideoGameObject> games = searchState.getResults();
             if(games != null){
                 for(VideoGameObject game : games){
                     Log.i("Game Result", game.getName());
                 }
             }
-        }
+        }*/
     }
 }
