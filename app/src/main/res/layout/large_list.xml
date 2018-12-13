@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#303030"
-
+    android:orientation="vertical"
     tools:context="cl.bgautier.claptrack.ui.Mainlist">
+
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -44,36 +45,22 @@
         android:textColor="@android:color/darker_gray"
         android:orientation="vertical">
 
-        <LinearLayout
+
+
+        <TextView
+            android:id="@+id/Titulo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="6"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:shadowColor="#000000"
+            android:shadowDx="1.5"
+            android:shadowDy="1.3"
+            android:shadowRadius="1.6"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            tools:text="Set Text" />
 
-
-            <TextView
-                android:id="@+id/Titulo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:shadowColor="#000000"
-                android:shadowDx="1.5"
-                android:shadowDy="1.3"
-                android:shadowRadius="1.6"
-                android:textAllCaps="true"
-                android:textColor="@android:color/white"
-                tools:text="Set Text" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="15dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
 
             <ListView
                 android:id="@+id/androidList"
@@ -82,8 +69,6 @@
                 android:divider="#58707b"
                 android:layout_margin="20dp"
                 android:dividerHeight="4px"/>
-        </LinearLayout>
 
     </LinearLayout>
-
-</RelativeLayout>
+</LinearLayout>

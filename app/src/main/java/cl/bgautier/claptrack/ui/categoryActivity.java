@@ -8,6 +8,7 @@ import androidx.appcompat.widget.Toolbar;
 import cl.bgautier.claptrack.R;
 import cl.bgautier.claptrack.Utilities.DrawerUtil;
 
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -82,6 +83,7 @@ public class categoryActivity extends AppCompatActivity implements GestureDetect
         obtainCategoriesViews();
         setOnclickAll();
         setToolbar();
+
     }
 
     public void setToolbar(){
