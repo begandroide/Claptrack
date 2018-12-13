@@ -257,15 +257,4 @@
                 android:textSize="23dp" />
         </FrameLayout>
     </GridLayout>
-    <Button
-        android:id="@+id/btn_finalize_welcome"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:text="Finish"
-        android:fontFamily="@font/lobsterregular"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:background="@drawable/figure_background_select"/>
 </LinearLayout>
