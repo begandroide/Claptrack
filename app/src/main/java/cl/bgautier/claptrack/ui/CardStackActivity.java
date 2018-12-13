@@ -38,6 +38,7 @@ import cl.bgautier.claptrack.Utilities.MyCardContainerView;
 import cl.bgautier.claptrack.Utilities.TouristSpot;
 import cl.bgautier.claptrack.Utilities.TouristSpotCardAdapter;
 import cl.bgautier.claptrack.actions.LoadGameList;
+import cl.bgautier.claptrack.actions.NextGame;
 import cl.bgautier.claptrack.models.VideoGameObject;
 import cl.bgautier.claptrack.states.AppState;
 import cl.bgautier.claptrack.states.GameTrackerState;
@@ -100,6 +101,7 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
                     Log.d("CardStackView", "Paginate: " + cardStackView.getTopIndex());
                     paginate();
                 }
+                store.dispatch(new NextGame());
             }
 
             @Override
@@ -132,13 +134,7 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         }, 1000);
     }
 
-    private LinkedList<TouristSpot> extractRemainingTouristSpots() {
-        LinkedList<TouristSpot> spots = new LinkedList<>();
-        for (int i = cardStackView.getTopIndex(); i < adapter.getCount(); i++) {
-            spots.add(adapter.getItem(i));
-        }
-        return spots;
-    }
+
 
     private void setupNavigation() {
         // Toolbar
@@ -206,6 +202,8 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         set.playTogether(rotation, translateX, translateY);
 
         cardStackView.swipe(SwipeDirection.Left, set);
+
+        store.dispatch(new NextGame());
     }
 
     public void swipeRight() {
@@ -231,6 +229,7 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         set.playTogether(rotation, translateX, translateY);
 
         cardStackView.swipe(SwipeDirection.Right, set);
+        store.dispatch(new NextGame());
     }
 
     private void reverse() {
@@ -243,30 +242,46 @@ public class CardStackActivity extends AppCompatActivity implements StoreSubscri
         adapter.notifyDataSetChanged();
     }
 
-    private TouristSpot createTouristSpot() {
-        return new TouristSpot("https://source.unsplash.com/Xq1ntWruZQI/600x800");
-    }
-
     private List<TouristSpot> createTouristSpots() {
         List<TouristSpot> spots = new ArrayList<>();
-        spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
-        spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/j6etkqnsr5xolxr06ctj.jpg"));
+        //spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/xfx1sfcmnhiriut8aibm.jpg"));
+        /*spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/j6etkqnsr5xolxr06ctj.jpg"));
         spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/obrgi1zlum5prc52vcjs.jpg"));
         spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/klrrql6nidmxmmyef7zu.jpg"));
-        spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/jfxfycbvrr9bkd1jsv2f.jpg"));
+        spots.add(new TouristSpot("http://images.igdb.com/igdb/image/upload/t_cover_big_2x/jfxfycbvrr9bkd1jsv2f.jpg"));*/
 
         return spots;
+    }
+
+    private LinkedList<TouristSpot> extractRemainingTouristSpots() {
+        LinkedList<TouristSpot> spots = new LinkedList<>();
+        for (int i = cardStackView.getTopIndex(); i < adapter.getCount(); i++) {
+            spots.add(adapter.getItem(i));
+        }
+        return spots;
+    }
+
+    private void addLast(String name, String url) {
+        LinkedList<TouristSpot> spots = extractRemainingTouristSpots();
+        spots.addLast(new TouristSpot(name,"http://images.igdb.com/igdb/image/upload/t_cover_big_2x/"+url+".jpg"));
+        adapter.clear();
+        adapter.addAll(spots);
+        adapter.notifyDataSetChanged();
     }
 
     @Override
     public void newState(GameTrackerState state) {
         List<VideoGameObject> games = state.getGameTrackerList();
+        int index = state.getCurrentGameIndex();
+
         if(games != null){
-            for(VideoGameObject game : games){
-                Log.i(TAG,  game.getName());
-                Log.i(TAG, game.getCover().getCloudinary_id());
-                Log.i(TAG, game.getRating().toString());
-            }
+
+            addLast(games.get(index).getName(), games.get(index).getCover().getCloudinary_id());
+
+            Log.i(TAG,  games.get(index).getName());
+            //Log.i(TAG,  games.get(index).getGenres().get(0).getName()); //Agregar try Catch
+            Log.i(TAG, games.get(index).getCover().getCloudinary_id());
+            Log.i(TAG, games.get(index).getRating().toString());
         }
     }
 }
